@@ -1,0 +1,34 @@
+DirectoryIndex fetch.php research.php index.php
+RewriteEngine On
+
+#RewriteCond %{HTTP_HOST} ^traditionalevents.eu$ [NC] 
+#RewriteRule ^(.*)$ http://traditionalevents.eu/$1 [R=301,L]
+
+RewriteRule ^events research.php?view=events [NC]
+RewriteRule ^beverage research.php?view=beverage [NC]
+RewriteRule ^nikaia research.php?view=nikaia [NC]
+RewriteRule ^makedonia research.php?view=makedonia [NC]
+RewriteRule ^ydravlikoi research.php?view=ydravlikoi [NC]
+RewriteRule ^gold-silver research.php?view=gold-silver [NC]
+RewriteRule ^golden-map research.php?view=map3 [NC]
+RewriteRule ^maps research.php [NC]
+#RewriteRule ^map research.php?view=map1 [NC]
+
+RewriteRule ^frontpage index.php [NC]
+RewriteRule ^purchase purchase.php [NC]
+RewriteRule ^error error.php [NC]
+
+RewriteRule ^insert insert.php [NC]
+RewriteRule ^inser2 admin/quickInsert2.php [NC]
+RewriteRule ^login admin/profileLog.php [NC]
+RewriteRule ^submit submit.php [NC]
+RewriteRule ^update update.php [NC]
+#RewriteRule ^subscribe subscribe.php [NC]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ professional.php?alias=$1 [L]
+
+#RewriteRule ^services content.php?content=services [NC]
+#RewriteRule ^contact content.php?content=contact [NC]
+#RewriteRule ^support content.php?content=support [NC]
